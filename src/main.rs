@@ -1,5 +1,11 @@
 use dioxus::{prelude::*};
 
+mod components; // components model declaration
+use components::TaskResume;
+
+mod models; // models model declaration
+use models::Date;
+
 static CSS: Asset = asset!("/assets/styling/main.css"); // stylesheet declaration
 
 fn main() {
@@ -12,7 +18,30 @@ fn App() -> Element {
         document::Stylesheet { href: CSS } // implementing stylesheet
 
         main { 
-            h1 { "ToDo app" }
+            h1 {
+                id: "app-title",
+                "ToDo app" 
+            }
+
+            div { class: "task-card",
+        
+                h2 { 
+                    id: "task-counter",
+                    "Hai 0 attività"
+                }
+
+                TaskResume {
+                    title: "Example task",
+                    description: "lorem ipsum"
+                }
+                
+                div { class: "break-line" }
+
+                TaskResume {
+                    title: "Example task 2",
+                    description: "lorem ipsum 2"
+                }
+            }
         }
     }
 }
