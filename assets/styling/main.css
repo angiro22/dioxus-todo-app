@@ -1,14 +1,44 @@
 body {
     background-color: #C4956A;
     color: #fff;
-    padding: 5% 10%;
+    padding: 0 3%;
 }
 
-main {
+#app-title {
     text-align: center;
-    font-size: 100px;
+    font-size: 2rem;
 }
 
-h1 {
-    font-size: 2rem;
+#task-counter {
+    font-size: 1.7rem
+}
+
+.task-title {
+    max-width: 12rem;
+    white-space: nowrap; /* no next line allowed */
+    overflow: hidden;
+    text-overflow: ellipsis /* add ellipsis at the end if the text overflows */
+}
+
+.task-description {
+    color: rgba(255, 255, 255, 0.7);
+
+    /* Set up the two lines max layout to the task description */
+    display: -webkit-box; /* set old layout model (flexbox "legacy") */
+    line-clamp: 2; /* max 2 lines */
+    -webkit-box-orient: vertical; /* use a vertical layout */
+    overflow: hidden; /* hide all the text after the maximum */
+    text-overflow: ellipsis;
+    line-height: 1.4;
+}
+
+.task-card {
+    padding: 1% 5%;
+    min-height: 20vh;
+    background-color: #9F7147;
+    border-radius: 10px;
+}
+
+.break-line {
+    border: 1px solid rgba(255, 255, 255, 0.7);
 }
