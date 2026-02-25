@@ -23,7 +23,7 @@ fn App() -> Element {
                 "ToDo app" 
             }
 
-            div { class: "task-card",
+            div { class: "task-container",
         
                 h2 { 
                     id: "task-counter",
@@ -31,15 +31,17 @@ fn App() -> Element {
                 }
 
                 TaskResume {
-                    title: "Example task",
-                    description: "lorem ipsum"
+                    title: "Example task 1",
+                    description: "lorem ipsum 1",
+                    done: false
                 }
                 
                 div { class: "break-line" }
 
                 TaskResume {
                     title: "Example task 2",
-                    description: "lorem ipsum 2"
+                    description: "lorem ipsum 2",
+                    done: true
                 }
             }
         }
