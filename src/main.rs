@@ -1,60 +1,42 @@
 use dioxus::{prelude::*};
 
-mod components; // components model declaration
-use components::TaskResume;
-use components::Button;
+mod components; // components module declaration
+pub use components::*;
 
-mod models; // models model declaration
-use models::Date;
+mod views; // views module declaration
+pub use views::*;
 
 static CSS: Asset = asset!("/assets/styling/main.css"); // stylesheet declaration
+
+#[derive(Routable, Clone)]
+#[rustfmt::skip]
+enum Route {
+    #[route("/")]
+    Task {},
+
+    #[route("/task")]
+    Home {},
+
+    #[route("/:.._segments")]
+    PageNotFound { _segments: Vec<String> }
+}
 
 fn main() {
     dioxus::launch(App);
 }
 
 #[component]
-fn App() -> Element {
+pub fn App() -> Element {
     rsx! {
         document::Stylesheet { href: CSS } // implementing stylesheet
 
-        main { 
-            h1 {
-                id: "app-title",
-                "ToDo app" 
-            }
-
-            div { class: "task-container",
-        
-                h2 { 
-                    id: "task-counter",
-                    "Hai 0 attività"
-                }
-
-                TaskResume {
-                    title: "Example task 1",
-                    description: "lorem ipsum 1",
-                    done: false
-                }
-                
-                div { class: "break-line" }
-
-                TaskResume {
-                    title: "Example task 2",
-                    description: "lorem ipsum 2",
-                    done: true
-                }
-            }
-
-            div { class: "button-container", id: "new-task",
-
-                Button {
-                    height: 4.0,
-                    width: 4.0,
-                    border_radius: 1.0,
-                    content: "+",
-                }
-            }
-        }
+        Router::<Route> {}
     }
+}
+
+#[component]
+fn PageNotFound(_segments: Vec<String>) -> Element {
+    navigator().push(Route::Home {});
+    
+    rsx! {}
 }

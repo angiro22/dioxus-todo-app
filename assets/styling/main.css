@@ -96,13 +96,17 @@ body {
     transition: 0.1s all ease-in-out;
 }
 
-#new-task {
+.button-container {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
 }
 
-#new-task > .button {
+.button-container a {
+    text-decoration: none;
+}
+
+#new-task {
     font-size: 3rem;
     font-weight: 400;
 }
