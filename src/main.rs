@@ -2,6 +2,7 @@ use dioxus::{prelude::*};
 
 mod components; // components model declaration
 use components::TaskResume;
+use components::Button;
 
 mod models; // models model declaration
 use models::Date;
@@ -42,6 +43,16 @@ fn App() -> Element {
                     title: "Example task 2",
                     description: "lorem ipsum 2",
                     done: true
+                }
+            }
+
+            div { class: "button-container", id: "new-task",
+
+                Button {
+                    height: 5.0,
+                    width: 10.0,
+                    border_radius: 1.0,
+                    content: "Example button",
                 }
             }
         }
