@@ -22,7 +22,7 @@ pub fn TaskResume(props: TaskProps) -> Element {
 
             input {
                 class: "checkbox",
-                type: "checkbox",
+                r#type: "checkbox",
                 checked: is_done,
 
                 oninput: move |_| { is_done.set(!is_done()) }
