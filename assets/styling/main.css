@@ -88,9 +88,21 @@ body {
     border: none;
     font-weight: bold;
     margin-top: 1rem;
+    text-align: center;
 }
 
 .button:active {
     background: #e4ba90;
     transition: 0.1s all ease-in-out;
+}
+
+#new-task {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+#new-task > .button {
+    font-size: 3rem;
+    font-weight: 400;
 }

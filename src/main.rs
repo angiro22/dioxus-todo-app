@@ -49,10 +49,10 @@ fn App() -> Element {
             div { class: "button-container", id: "new-task",
 
                 Button {
-                    height: 5.0,
-                    width: 10.0,
+                    height: 4.0,
+                    width: 4.0,
                     border_radius: 1.0,
-                    content: "Example button",
+                    content: "+",
                 }
             }
         }
