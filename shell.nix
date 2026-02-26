@@ -46,8 +46,7 @@ pkgs.mkShell {
     export JAVA_HOME="${pkgs.jdk17.home}"
     
     export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath desktopDeps}:$LD_LIBRARY_PATH
-    export XDG_DATA_DIRS=${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gs
-ettings-desktop-schemas.name}:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}:$XDG_DA
+    export XDG_DATA_DIRS=${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}:$XDG_DA
 TA_DIRS
 
     echo "Configurando la toolchain Rust..."
