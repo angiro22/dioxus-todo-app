@@ -9,6 +9,7 @@ edition = "2021"
 [dependencies]
 chrono = "0.4.44"
 dioxus = { version = "0.7.1", features = ["router"] }
+dioxus-free-icons = { version = "0.10", features = ["font-awesome-regular", "font-awesome-solid", "material-design-icons-navigation"] }
 
 [features]
 default = ["mobile"]

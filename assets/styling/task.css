@@ -12,10 +12,16 @@ body {
     top: 5%;
 
     border-radius: 1.2rem;
-
-    padding: 0 10%;
 }
 
 #task-title {
     padding-top: 5%;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: white;
+    
+    padding: 3%;
 }
