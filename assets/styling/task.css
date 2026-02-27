@@ -3,7 +3,7 @@ body {
     margin: 0;
 }
 
-.task-container {
+.container {
     background: #9F7147;
     width: 100%;
     height: 85%;
@@ -14,8 +14,8 @@ body {
     border-radius: 1.2rem;
 }
 
-#task-title {
-    padding-top: 5%;
+#title {
+    font-size: 3rem;
 }
 
 .back-button {
@@ -27,5 +27,41 @@ body {
 }
 
 .info-container {
-    
+    padding-left: 5%;
+}
+
+.input {
+    display: flex;
+    align-items: start;
+    padding-bottom: 3%;
+}
+
+.input > textarea, input {
+    margin-left: 3%;
+
+    background: none;
+    color: white;
+
+    outline: none;
+
+    font-size: 1.2rem;
+}
+
+.input > textarea {
+    border: none;
+}
+
+.input > textarea::placeholder {
+    color: white;
+}
+
+.input > input {
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    height: 2rem;
+}
+
+#mark-completed {
+    font-size: 1.3rem;
+    font-weight: 900;
 }
