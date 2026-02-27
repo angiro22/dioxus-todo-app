@@ -12,7 +12,7 @@ pub fn Task() -> Element {
     rsx! {
         document::Stylesheet { href: TASK_SCREEN_CSS }
 
-        main { id: "task-container",
+        main { class: "task-container",
             Link { to: Route::Home {  },
                 button { class: "back-button",
                     Icon {

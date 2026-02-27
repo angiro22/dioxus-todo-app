@@ -12,10 +12,10 @@ static CSS: Asset = asset!("/assets/styling/main.css"); // stylesheet declaratio
 #[rustfmt::skip]
 enum Route {
     #[route("/")]
-    Task {},
+    Home {},
 
     #[route("/task")]
-    Home {},
+    Task {},
 
     #[route("/:.._segments")]
     PageNotFound { _segments: Vec<String> }

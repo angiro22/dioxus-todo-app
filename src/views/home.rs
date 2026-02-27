@@ -12,7 +12,7 @@ pub fn Home() -> Element {
                 "To Do app" 
             }
 
-            div { class: "task-container",
+            div { class: "task-resume-container",
         
                 h2 { 
                     id: "task-counter",
