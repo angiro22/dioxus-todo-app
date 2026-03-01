@@ -1,10 +1,13 @@
 use dioxus::{prelude::*};
 
-mod components; // components module declaration
+mod components; // components module
 pub use components::*;
 
-mod views; // views module declaration
+mod views; // views module 
 pub use views::*;
+
+mod db; // database module
+pub use db::*;
 
 static CSS: Asset = asset!("/assets/styling/main.css"); // stylesheet declaration
 

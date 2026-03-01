@@ -9,6 +9,9 @@ edition = "2021"
 [dependencies]
 chrono = "0.4.44"
 dioxus = { version = "0.7.1", features = ["router"] }
+sqlx = { version = "0.8", features = ["sqlite", "runtime-tokio", "macros"] }
+tokio = { version = "1.49", features = ["full"]}
+directories = "6.0"
 dioxus-free-icons = { version = "0.10", features = [
     "material-design-icons-navigation",
     "material-design-icons-editor",
