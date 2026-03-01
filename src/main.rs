@@ -7,7 +7,6 @@ mod views; // views module
 pub use views::*;
 
 mod db; // database module
-pub use db::*;
 
 static CSS: Asset = asset!("/assets/styling/main.css"); // stylesheet declaration
 
@@ -30,6 +29,18 @@ fn main() {
 
 #[component]
 pub fn App() -> Element {
+    // Init db resource
+    let db_resource = use_resource(move || async move {
+        db::init_db().await
+    });
+
+    let pool = match &*db_resource.read() {
+        Some(pool) => pool.clone(),
+        None => return rsx! { div { "Database loading..." } },
+    };
+
+    use_context_provider(|| pool.clone()); // provides the pool to the whole app
+
     rsx! {
         document::Stylesheet { href: CSS } // implementing stylesheet
 
