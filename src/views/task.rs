@@ -1,9 +1,7 @@
-use dioxus::html::div;
 use dioxus::prelude::*;
 use dioxus_free_icons::Icon;
 use dioxus_free_icons::icons::md_navigation_icons::*;
 use dioxus_free_icons::icons::md_editor_icons::*;
-use dioxus_free_icons::icons::md_action_icons::*;
 use dioxus_free_icons::icons::md_device_icons::*;
 
 use crate::components::*;
@@ -23,7 +21,7 @@ pub fn Task() -> Element {
         document::Stylesheet { href: TASK_SCREEN_CSS }
 
         main { class: "container",
-            Link { to: Route::Home {  },
+        Link { to: Route::Home {  },
                 button { class: "back-button",
                     Icon {
                         icon: MdArrowBack,
