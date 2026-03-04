@@ -26,7 +26,7 @@ pub async fn init_db() -> SqlitePool {
         .expect("DB connection error");
 
     sqlx::query("
-        CREATE TABLE IF NOT EXSISTS tasks (
+        CREATE TABLE IF NOT EXISTS tasks (
             id INTEGER AUTOINCREMENT,
             title TEXT NOT NULL,
             description TEXT,
